@@ -1,0 +1,10 @@
+{
+  "name": "velocityjsst",
+  "version": "0.0.0",
+  "dependencies": {
+    "lodash": "*",
+    "jquery": "*",
+    "velocity": "*"
+    },
+  "devDependencies": {  }
+}

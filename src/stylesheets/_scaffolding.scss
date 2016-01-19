@@ -1,0 +1,174 @@
+.slide_pool{
+	padding: 2em 0;
+	height: 87%;
+	position: relative;
+	overflow: hidden;
+}
+.note{
+	font-size: 0.7em;
+	color: $color_4;
+	position: relative;
+	bottom: 0.1em;
+}
+.slide{
+	background: white;
+	position:absolute;
+	height: 100%;
+	width: 100%;
+	&:not(.active){
+		left:100%;
+	}
+	.title{
+		font-size: 1.3em;
+		font-weight: 400;
+	}
+	.slide_header{
+		.title{
+			border-bottom: 1px solid $color_3;
+		}
+		border-bottom: 2px solid $color_4;
+	}
+	.body{
+		>:first-child{
+			margin-top: 1.5em;
+		}
+	}
+	.subtitle{
+		color: $color_3;
+		margin-top: 1.5em;
+		margin-bottom: 0.8em;
+		font-weight: 400;
+	}
+	.body{
+		padding: 0 1em;
+		font-weight: 300;
+	}
+	.plain{
+		margin-bottom: 0.4em;
+		line-height: 1.3em;
+	}
+	.tabbed{
+		padding-left: 3em;
+	}
+	.inline_code{
+		font-family: monospace;
+		font-size: 0.95em;
+		color: $color_5;
+	}
+	.inline_filename{
+		display: inline-block;
+		font-family: monospace;
+		font-size: 0.95em;
+		color: invert($color_1);
+		background: $color_5;
+    padding: 0.3em 0.6em;
+    line-height: 1em;
+    vertical-align: middle;
+	}
+}
+.topic_list{
+	padding-left: 1em;
+	list-style-type: none;
+	li{
+		position: relative;
+		margin-bottom: 0.5em;
+		line-height: 1.2em;
+		&:before{
+			content:"-";
+			position: absolute;
+			right: 100%;
+			margin-right: 0.6em;
+		}
+	}
+	p{
+		margin-left: 2em;
+	}
+}
+.sub_list{
+	font-size: 0.9em;
+	padding-left: 1.1em;
+	>div{
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+	}
+	dt,dd{
+		display: inline-block;
+		vertical-align: top;
+	}
+	dt{
+		font-weight: 400;
+	}
+	dd{
+		font-size: 0.9em;
+	}
+}
+.code_pool{
+	font-size: 0.7em;
+	color: $polite_white;
+	background-color: $color_5;
+	width: 86%;
+	margin: 1em auto;
+	padding:1em;
+	p{
+		padding-left: 2em;
+		margin-bottom: 0.2em;
+	}
+	&+.subtitle{
+		margin-top: 0;
+	}
+}
+.example_box{
+	display: inline-block;
+	position: relative;
+	height: 50px;
+	width: 50px;
+	background-color: $color_2;
+}
+.dummy_box{
+	display: inline-block;
+	position: relative;
+	height: 30px;
+	width: 30px;
+	background-color: $color_4;
+	&.action_dummy_box{
+		cursor: pointer;
+		background-color: $color_3;
+	}
+}
+#slide00{
+	text-align: center;
+	perspective: 115px;
+	div{
+		width: 70px;
+		height: 100%;
+		display: inline-block;
+		transform: rotateX(50deg);
+	}
+	.logo{
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.block1{
+		background-color: $color_1;
+	}
+	.block2{
+		background-color: $color_2;
+	}
+	.block3{
+		background-color: $color_3;
+	}
+	.block4{
+		background-color: $color_4;
+	}
+}
+.col_6_12{
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	.code_pool{
+		width: 90%;
+	}
+}

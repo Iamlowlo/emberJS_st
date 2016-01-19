@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EmberJS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='styleslide' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script src="scripts/app.js"></script>
+  </head>
+  <body><!--[if lt IE 8]>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade your browser</a>
+      to improve your experience.
+    </p><![endif]-->
+    
+    <main class="container">
+      <header class="main_title_box">
+        <h1 class="title">EmberJS</h1>
+      </header>
+      <div class="slide_pool">
+        <section id="slide00" class="slide active" data-slide-num="00">
+            <div class="block block1"></div>
+            <div class="block block2"></div>
+            <div class="block block3"></div>
+            <div class="block block4"></div>
+            <img class="logo" src="images/ember_mascot.png" alt="ember mascot">
+        </section>
+        <section id="slide01" class="slide active" data-slide-num="01">
+          <header class="slide_header">
+            <h1 class="title">Intro</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">What's EmberJS?</h2>
+            <ul class="topic_list">
+              <li>A JS MV<span class="note">C</span> framework</li>
+              <li>Comes with a CLI called (surprise) ember-cli</li>
+              <li>Templates written in Handlebars</li>
+              <li>CSS by default but Sass / Compass / Less / Stylus installing npm modules</li>
+              <li>Has ES2015 built in, but you can use CoffeScript via npm module</li>
+            </ul>
+          </div>
+        </section>
+        <section id="slide02" class="slide active" data-slide-num="02">
+          <header class="slide_header">
+            <h1 class="title">Basic installation</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">What's needed?</h2>
+            <ul class="topic_list">
+              <li>Node 4.x.x</li>
+              <li>Bower</li>
+            </ul>
+            <h2 class="subtitle">Ember-cli</h2>
+            <div class="code_pool">
+              <p>> npm install -g ember-cli</p>
+            </div>
+          </div>
+        </section>
+        <section id="slide03" class="slide active" data-slide-num="03">
+          <header class="slide_header">
+            <h1 class="title">Extra's installation</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">Sass</h2>
+            <div class="code_pool">
+              <p>> ember install ember-cli-sass</p>
+            </div>
+            <h2 class="subtitle">PhantomJS</h2>
+            <div class="code_pool">
+              <p>> npm install -g phantomjs</p>
+            </div>
+          </div>
+        </section>
+        <section id="slide04" class="slide active" data-slide-num="04">
+          <header class="slide_header">
+            <h1 class="title">Project initialization</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">Init</h2>
+            <p class="plain">This will create all the basic scaffolding and install all the required packages.</p>
+            <div class="code_pool">
+              <p>> ember new app-name</p>
+            </div>
+            <h2 class="subtitle">Dev server</h2>
+            <div class="code_pool">
+              <p>> ember serve</p>
+            </div>
+          </div>
+        </section>
+        <section id="slide05" class="slide active" data-slide-num="05">
+          <header class="slide_header">
+            <h1 class="title">Ember schema</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">Config</h2>
+            <p class="plain">Inside config/environment.js is our app configuration.</p>
+            <p class="plain">To avoid XSS scripting, diferent basepaths than the root are forbidden. To include external sources like fonts, styles or libraries, you should specify them on ENV.contentSecurityPolicy property.</p>
+            <div class="code_pool">
+              <p>contentSecurityPolicy: {</p>
+              <p class="tabbed">'default-src': "'none'",</p>
+              <p class="tabbed">'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",</p>
+              <p class="tabbed">'font-src': "'self' https://fonts.gstatic.com",</p>
+              <p class="tabbed">'img-src': "'self'",</p>
+              <p class="tabbed">'report-uri':"'localhost'",</p>
+              <p class="tabbed">'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",</p>
+              <p class="tabbed">'frame-src': "'none'"</p>
+              <p>}</p>
+            </div>
+          </div>
+        </section>
+        <section id="slide05" class="slide active" data-slide-num="05">
+          <header class="slide_header">
+            <h1 class="title">Ember schema</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">Ember CLI uses</h2>
+            <p class="plain">Most common uses of ember-cli developing are:</p>
+            <div class="code_pool">
+              <p>> ember generate component my-component</p>
+              <p>> ember destroy component my-component</p>
+              <p>> ember build {{options}}</p>
+            </div>
+          </div>
+        </section>
+        <section id="slide06" class="slide active" data-slide-num="06">
+          <header class="slide_header">
+            <h1 class="title">Ember schema</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">Common elements</h2>
+            <ul class="topic_list">
+              <li><strong>Route:</strong> creates an accessible path on <span class="inline_filename">router.js</span> a js file inside routes/ and a view file inside templates/</li>
+              <li><strong>Controller:</strong> needed as a concept to work (by now), but not needed to exist as a file on controllers/ so only generate one inf the route view needs own logic.</li>
+              <li><strong>Model:</strong> Data model for a route.</li>
+              <li><strong>Component:</strong> ember's bet to substitute routes and controllers. A <span class="inline_filename">my-component.js</span> file will be created inside components/ and <span class="inline_filename">my-component.hbs</span> on templates/components/</li>
+              <li><strong>Helper:</strong> template helper to process data on the view side.</li>
+              <li><strong>Mixin:</strong> a bunch of methods to inject in controllers or components</li>
+            </ul>
+            <p class="plain note">Every created element becames with the default test blueprint file.</p>
+          </div>
+        </section>
+        <section id="slide07" class="slide active" data-slide-num="07">
+          <header class="slide_header">
+            <h1 class="title">Routes</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">Examples</h2>
+            <div class="code_pool">
+              <p>Router.map(function() {</p>
+              <p class="tabbed">this.route('elements', { path: '/elements' });</p>
+              <p class="tabbed">this.route('elements');</p>
+              <p class="tabbed">this.route('element', { path: '/element/:element_id' });</p>
+              <div class="tabbed">this.route('groups', function(){ 
+                <p class="tabbed">this.route('index');</p>
+                <p class="tabbed">this.route('special');</p>
+                });</div>
+              <p>});</p>
+            </div>
+            <ul class="topic_list">
+              <li>There is a shorthand method to define routes on <span class="inline_filename">route.js</span></li>
+              <li>Parameters on routes are defined without the shorthand.</li>
+              <li>By default, every route has an internal <span class="inline_filename">index.hbs</span> view to render on '/' <span class="note">(including the main App route)</span></li>
+              <li></li>
+              <li>A controller is created for every route, if there is no real controller created, ember would use the simplest one.</li>
+            </ul>
+          </div>
+        </section>
+        <section id="slide08" class="slide active" data-slide-num="08">
+          <header class="slide_header">
+            <h1 class="title">Controllers</h1>
+          </header>
+          <div class="body">
+            <ul class="topic_list">
+              <li>Just used in case the app needs logic on a route.</li>
+              <li>They are going to be removed on the near future by using routable components.</li>
+              <li>As long as the data model can only be picked on routes, it will be present.</li>
+            </ul>
+          </div>
+        </section>
+        <section id="slide09" class="slide active" data-slide-num="09">
+          <header class="slide_header">
+            <h1 class="title">Models</h1>
+          </header>
+          <div class="body">
+            <div class="code_pool">
+              <p>export default DS.Model.extend({</p>
+              <p class="tabbed">attribute1: DS.attr(),</p>
+              <p class="tabbed">attribute2: DS.attr('number'),</p>
+              <p class="tabbed">attribute3: DS.attr('string'),</p>
+              <p class="tabbed">attribute4: DS.attr('boolean'),</p>
+              <p class="tabbed">attribute5: DS.attr('date')</p>
+              <p>});</p>
+            </div>
+            <ul class="topic_list">
+              <li>It's not neded to declare Id.</li>
+              <li>It can auto detect the data type.</li>
+              <li>A file named in singular for each data model on the app.</li>
+              <li>Firebase will create/need those names in plural.</li>
+            </ul>
+          </div>
+        </section>
+        <section id="slide10" class="slide active" data-slide-num="10">
+          <header class="slide_header">
+            <h1 class="title">Mo Models. Relationship</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">Model: Post</h2>
+            <div class="code_pool">
+              <p>export default DS.Model.extend({</p>
+              <p class="tabbed">content: DS.attr('string'),</p>
+              <p class="tabbed">date: DS.attr('date'),</p>
+              <p class="tabbed">author: DS.belongsTo('user'),</p>
+              <p class="tabbed">comment: DS.hasMany('comment')</p>
+              <p>});</p>
+            </div>
+            <div class="col_6_12">
+              <h2 class="subtitle">Model: User</h2>
+              <div class="code_pool">
+                <p>export default DS.Model.extend({</p>
+                <p class="tabbed">name: DS.attr('string'),</p>
+                <p class="tabbed">date: DS.attr('date'),</p>
+                <p class="tabbed">post: DS.hasMany('post'),</p>
+                <p class="tabbed">comment: DS.hasMany('comment')</p>
+                <p>});</p>
+              </div>
+            </div><!-- 
+         --><div class="col_6_12">
+              <h2 class="subtitle">Model: Comment</h2>
+              <div class="code_pool">
+                <p>export default DS.Model.extend({</p>
+                <p class="tabbed">content: DS.attr('string'),</p>
+                <p class="tabbed">date: DS.attr('date'),</p>
+                <p class="tabbed">user: DS.belongsTo('user'),</p>
+                <p class="tabbed">post: DS.belongsTo('post'),</p>
+                <p>});</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="slide11" class="slide active" data-slide-num="11">
+          <header class="slide_header">
+            <h1 class="title">Components - setUp</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">components/poc-component.js</h2>
+            <div class="code_pool">
+              <p>export default Ember.Component.extend({</p>
+              <p class="tabbed">tagName: 'ul',</p>
+              <p class="tabbed">classNames: ['component col-xs-6-12'],</p>
+              <p class="tabbed">classNameBindings: ['isActive:selected'],</p>
+              <p class="tabbed">value: 2,</p>
+              <div class="tabbed">isActive: Ember.computed(function(){
+                <p class="tabbed">return this.selectedValue === this.value</p>
+              <p>}).property('selectedValue','value')</p></div>
+              <p class="tabbed">tagName: 'ul',</p>
+              <p>});</p>
+            </div>
+            <ul class="topic_list">
+              <li>Components have to have a dashed name.</li>
+              <li>By default, components are rendered in a div tag.</li>
+              <li>classNameBindings have a shortcut mode with isNAME.</li>
+              <li>Attributes passed in template call, don't need to be declared inside.</li>
+            </ul>
+          </div>
+        </section>
+        <section id="slide12" class="slide active" data-slide-num="12">
+          <header class="slide_header">
+            <h1 class="title">Components - actions</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">components/poc-component.js</h2>
+            <div class="code_pool">
+              <p>export default Ember.Component.extend({</p>
+              <div class="tabbed">actions: {
+                <p>changeSelectedValue(index){</p>
+                <div class="tabbed">
+                  <p>this.set('selectedValue',index);</p>
+                  <p>this.sendAction('magic'); <span class="note">(keep in mind this line)</span></p>
+                </div>
+                <p>}</p>
+              </div>
+              <p class="tabbed">},</p>
+              <div class="tabbed">click(){
+              <p>alert('Do I annoy you?');</p>
+              }</div>
+              <p>});</p>
+            </div>
+            <ul class="topic_list">
+              <li>Actions are present in controllers too.</li>
+              <li>Declare any data/user interaction here.</li>
+              <li>Can be aquired by its parent, and triggered locally.</li>
+              <li>There is a built in events <a href="https://guides.emberjs.com/v2.2.0/components/handling-events/#toc_event-names" target="_blank">HERE</a></li>
+            </ul>
+          </div>
+        </section>
+        <section id="slide13" class="slide active" data-slide-num="13">
+          <header class="slide_header">
+            <h1 class="title">Components - template</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">templates/application.hbs</h2>
+            <div class="code_pool">
+              <p>{{#poc-component list=model magic=customAction }}</p>
+                <p class="tabbed">{{#if selectedValue}} The selected value is: {{selectedValue}} {{/if}}</p>
+              <p>{{/poc-component}}</p>
+            </div>
+            <h2 class="subtitle">templates/components/poc-component.hbs</h2>
+            <div class="code_pool">
+              <p>{{#each list as |list index|}}</p>
+                <p class="tabbed">&#60;li {{action "changeSelectedValue" index}}&#62; {{index}} {{list}} &#60;/li&#62;></p>
+              <p>{{/each}}</p>
+              <p>&#60;li&#62;{{yield}} &#60;/li&#62;</p>
+            </div>
+            <ul class="topic_list">
+              <li>Components have to have a dashed name.</li>
+              <li>By default, components are rendered in a div tag.</li>
+              <li>classNameBindings have a shortcut mode with isNAME.</li>
+              <li>Attributes passed in template instance don't need to be declared inside.</li>
+              <li>Components can be caled as block elements. Content placed inside will be displayed on {{yield}}</li>
+            </ul>
+          </div>
+        </section>
+        <section id="slide14" class="slide active" data-slide-num="14">
+          <header class="slide_header">
+            <h1 class="title">Components - rendered HTML</h1>
+          </header>
+          <div class="body">
+            <h2 class="subtitle">templates/application.hbs</h2>
+            <div class="code_pool">
+              <p>&#60;ul id="ember264" class="component col-xs-6-12"&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 0&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 1&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 2&#60;/li&#62;</p>
+              <p>&#60;/ul&#62;</p>
+            </div>
+            <div class="code_pool">
+              <p>&#60;ul id="ember264" class="component col-xs-6-12"&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 0&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 1&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 2&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;The selected value is: 1&#60;/li&#62;</p>
+              <p>&#60;/ul&#62;</p>
+            </div>
+            <div class="code_pool">
+              <p>&#60;ul id="ember264" class="component col-xs-6-12 selected"&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 0&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 1&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;Lorem 2&#60;/li&#62;</p>
+                <p class="tabbed">&#60;li&#62;The selected value is: 2&#60;/li&#62;</p>
+              <p>&#60;/ul&#62;</p>
+            </div>
+          </div>
+        </section>
+        <section id="slide15" class="slide active" data-slide-num="15">
+          <header class="slide_header">
+            <h1 class="title">Mixins</h1>
+          </header>
+          <div class="body">
+            <ul class="topic_list">
+              <li>Group of functions to inject into components/controllers</li>
+            </ul>
+            <h2 class="subtitle">mixins/time-relative.js</h2>
+            <div class="code_pool">
+              <p>export default Ember.Mixin.create({</p>
+              <div class="tabbed">hourBuilder : function(timestamp){
+                <p>let time = new Date(timestamp);</p>
+                <p>let minutes = time.getMinutes().toString();</p>
+                <p>minutes = (minutes.length&#60;2) ? '0'+minutes : minutes;</p>
+                <p>return time.getHours()+':'+minutes;</p>
+                }
+              </div>
+              <p>});</p>
+            </div>
+            <h2 class="subtitle">components/poc-component.js</h2>
+            <div class="code_pool">
+              <p>import TimeRelativeMixin from '../mixins/time-relative';</p>
+              <p>export default Ember.Component.extend(TimeRelativeMixin,{</p>
+              <p class="tabbed">timestamp : new Date(),</p>
+              <div class="tabbed">hour : Ember.computed(function{
+                <p>return this.hourBuilder(this.get('timestamp'));</p>
+              }).property('timestamp')</div>
+              <p>});</p>
+            </div>
+          </div>
+        </section>
+        <section id="slide16" class="slide active" data-slide-num="16">
+          <header class="slide_header">
+            <h1 class="title">Downsides solved. Helpers</h1>
+          </header>
+          <div class="body">
+            <ul class="topic_list">
+              <li>Templates are constrained by Handlebars restrictions.</li>
+              <li>At first, simpler things could be a headache.</li>
+              <li>Helpers can be chained one inside another.</li>
+            </ul>
+            <h2 class="subtitle">components/poc-component.js</h2>
+            <div class="code_pool">
+              <p>export default Ember.Component.extend({</p>
+              <p class="tabbed">tagName: 'ul',</p>
+              <p class="tabbed">classNames: ['component col-xs-6-12'],</p>
+              <p class="tabbed">classNameBindings: ['isActive:selected'],</p>
+              <p class="tabbed">value: 2,</p>
+              <div class="tabbed">isActive: Ember.computed(function(){
+                <p class="tabbed">return this.selectedValue === this.value</p>
+              <p>}).property('selectedValue','value')</p></div>
+              <p class="tabbed">tagName: 'ul',</p>
+              <p>});</p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="slideshow_controls">
+        <a href="#" class="icon-keyboard_arrow_left slide_control_btn prev_slide"></a>
+        <a href="#" class="icon-keyboard_arrow_right slide_control_btn next_slide"></a>
+        </div>
+    </main>
+
+  </body>
+</html>

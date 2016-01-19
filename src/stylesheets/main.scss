@@ -1,0 +1,47 @@
+@import 'reset';
+@import 'fonts';
+@import 'variables';
+@import 'scaffolding';
+@import 'slidecontrols';
+@import 'stresstest';
+
+body, * {
+  font-family: $font_family_1;
+  background: $color_5;
+  box-sizing:border-box;
+  font-size: 1.2em;
+}
+body,html{
+  height: 100%;
+}
+.container {
+  min-width: 40em;
+  width:90%;
+  height: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  box-shadow: 1px 1px 1px black;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+.title{
+  font-family: $font_family_2;
+}
+.main_title_box{
+  height: 13%;
+  padding-top: 1.6em;
+  margin: 0 -6.3%;
+  position: relative;
+  .title{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 2em;
+    border-bottom: 2px solid $color_1;
+    padding: 0 0.8em;
+  }
+  border-bottom: 2px solid $color_2;
+}
+.hidden{
+  display: none !important;
+}

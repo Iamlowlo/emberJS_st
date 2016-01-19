@@ -1,0 +1,25 @@
+.slideshow_controls{
+	position: absolute;
+	top: 50%;
+	transform:translateY(-50%);
+	width: 86%;
+	height: 0;
+	left: 0;
+	right: 0;	
+	margin: 0 auto;
+	@media (min-width: 1400px) {
+		width: 90%;
+	}
+	.slide_control_btn{
+		position: absolute;
+		text-decoration: none;
+		color: #F2F2F2;
+		font-size: 3em;
+	}
+	.prev_slide{
+		right: 100%;
+	}
+	.next_slide{
+		left: 100%;
+	}
+}
